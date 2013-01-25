@@ -15,10 +15,10 @@ class @Board
 
     if x < 0 or x > 1 
       @dy *= -1
-      y = @y + @dy*time
+      y = @y + @dy*time/2
     if y < 0 or y > 1 
       @dx *= -1
-      x = @x + @dx*time
+      x = @x + @dx*time/2
 
     [@x, @y] = [x, y]
     @last_time = new Date()
