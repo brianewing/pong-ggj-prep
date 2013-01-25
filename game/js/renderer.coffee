@@ -15,13 +15,15 @@ class @Renderer
   start: -> @interval.start()
   pause: -> @interval.stop()
 
+  translatePosition: (x, y) -> [x * @width, y * @height]
+
   loop: =>
     @clear()
 
     ball = @board.ball
 
     @context.beginPath();
-    @context.arc(ball.x, ball.y, ball.radius, 2 * Math.PI, false)
+    @context.arc(@translatePosition(ball.x, ball.y)..., 50, 2 * Math.PI, false)
     @context.fillStyle = '#ff0000'
 
     @context.fill()
